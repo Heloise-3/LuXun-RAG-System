@@ -4,6 +4,14 @@ A Chinese-language application for generating prose inspired by Lu Xun's writing
 
 Generated text is not Lu Xun's original writing. This project does not train or fine-tune a model.
 
+## Live demo
+
+[Open the writing app](https://luxun-rag-system.onrender.com/)
+
+Enter a passage or scene, choose 1–3 reference passages, and select **生成文字**. The result appears alongside the retrieved passages and source notes.
+
+The demo runs on Render's free tier. After inactivity, the first visit may take 50 seconds or longer while the service wakes up.
+
 ![Writing interface](docs/images/interface.jpg)
 
 ## Features
@@ -111,6 +119,8 @@ The automated suite currently has 24 passing cases covering ranking, corpus/inde
 
 Two separate authorized browser runs used real providers. After restoring the original passages, the same test request retrieved original IDs 1 and 3, and the full request completed in approximately 6.39 seconds. This is one observed run, not a latency benchmark. See [validation notes](docs/VALIDATION_PUBLIC.md).
 
+The public deployment passed HTTP checks for the homepage, static files and health endpoint. The project owner also confirmed a successful generation through the deployed interface. This confirms a working demonstration; it is not a load test or quality evaluation.
+
 The corpus is small and unevenly distributed. The project has no validated benchmark for Lu Xun-style fidelity, general retrieval relevance or educational outcomes. It includes no model training or LoRA.
 
 ## Project structure
@@ -133,6 +143,14 @@ docs/                    corpus and validation notes
 
 ## Hosting
 
-GitHub stores the source; uploading the repository does not make this Python application a live website. GitHub Pages cannot run the FastAPI backend or safely store API keys.
+The public demo is hosted on [Render](https://luxun-rag-system.onrender.com/), which serves the FastAPI backend and web interface from the same service. GitHub hosts the source code.
 
-A Python ASGI host can serve both the page and API. Configure credentials as host-side secrets. Before exposing paid generation publicly, add visitor access controls, rate limits and spending limits. The current bound of two concurrent requests per process is not a global visitor quota. No public deployment has been performed.
+Deployment settings:
+
+- Runtime: Python 3.
+- Build command: `pip install -r requirements.txt`.
+- Start command: `uvicorn main:app --host 0.0.0.0 --port $PORT`.
+- Health check: `/health`.
+- Provider credentials: host-side environment variables for `DEEPSEEK_API_KEY` and `SILICONFLOW_API_KEY`.
+
+Free hosting does not cover model-provider charges. Requests to the public demo use the operator's provider accounts. The app limits concurrent generation requests to two per process, but has no visitor authentication or global request quota. Wider sharing should be accompanied by access controls, request rate limits and provider spending controls.
