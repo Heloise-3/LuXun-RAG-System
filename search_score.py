@@ -3,10 +3,20 @@ import numpy as np
 from embedding import embed_text
 from query_analyzer import analyze_query
 
+from config import ROOT
+
 def cosine(a, b):
-    a = np.array(a)
-    b = np.array(b)
-    return np.dot(a, b) / (np.linalg.norm(a) * np.linalg.norm(b))
+    a, b = np.asarray(a, dtype=float), np.asarray(b, dtype=float)
+    if a.ndim != 1 or b.ndim != 1 or a.shape != b.shape or not a.size:
+        raise ValueError('embedding dimension mismatch; rebuild index with the configured model')
+    if not np.isfinite(a).all() or not np.isfinite(b).all():
+        raise ValueError('non-finite embedding')
+    norm = np.linalg.norm(a) * np.linalg.norm(b)
+    return float(np.clip(np.dot(a, b) / norm, -1, 1)) if norm else 0.0
+
+def load_index():
+    from corpus_tools import load_index_file
+    return load_index_file(ROOT / 'corpus_embeddings.json')
 
 def compute_overlap(list1,list2):
     if len(list1)==0 or len(list2)==0:
@@ -33,12 +43,10 @@ def compute_metadata_score(
     metadata_score=(tone_score*0.25)+(theme_score*0.25)+(device_score*0.15)+(narrative_score*0.35)
     return metadata_score
 
-def search_similar(query, top_k=3):
+def search_similar(query, top_k=2, query_meta=None):
+    data = load_index()
+    query_meta = query_meta if query_meta is not None else analyze_query(query)
     query_emb = embed_text(query)
-    query_meta = analyze_query(query)
-
-    with open("corpus_embeddings.json", "r", encoding="utf8") as f:
-        data = json.load(f)
 
     scored = []
     for item in data:

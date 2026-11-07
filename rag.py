@@ -1,53 +1,19 @@
 from search_score import search_similar
 from query_analyzer import analyze_query
-from openai import OpenAI
-import os
-from dotenv import load_dotenv
+from config import make_client, model_name
 
-load_dotenv()
 
-client = OpenAI(
-    api_key=os.getenv("DEEPSEEK_API_KEY"),
-    base_url="https://api.deepseek.com"
-)
+def format_context(results):
+    return "\n\n".join(
+        f"[id:{r['item']['id']} source:{(r['item'].get('work') or r['item']['source'])} "
+        f"tone:{r['item']['tone']} theme:{r['item']['theme']} "
+        f"device:{r['item']['device']} narrative:{r['item']['narrative']} "
+        f"text:{r['item']['text']}]" for r in results
+    )
 
-def retrieve_context(query,top_k=3):
-    context_blocks = []
-    results = search_similar(query,top_k=top_k)
 
-    print("\n[DEBUG] Retrieved Chunks:")
-
-    for result in results:
-
-        item = result["item"]
-
-        print(
-            f"""
-            id={item['id']}
-            semantic_score={result['semantic_score']:.3f}
-            metadata_score={result['metadata_score']:.3f}
-            final_score={result['final_score']:.3f}
-            tone={item['tone']}
-            theme={item['theme']}
-            narrative={item['narrative']}"""
-        )
-
-        tone=", ".join(item.get("tone",[]))
-        theme=", ".join(item.get("theme",[]))
-        device=", ".join(item.get("device",[]))
-        narrative=item.get("narrative","")
-
-        block=f"""[
-        source:{item["source"]}
-        tone:{tone}
-        theme:{theme}
-        device:{device}
-        narrative:{narrative}
-        text:{item["text"]}]"""
-
-        context_blocks.append(block)
-
-    return "\n\n".join(context_blocks)
+def retrieve_context(query, top_k=2, query_meta=None):
+    return format_context(search_similar(query, top_k=top_k, query_meta=query_meta))
 
 def build_prompt(query,context,query_meta):
     tone = ", ".join(query_meta["tone"])
@@ -121,33 +87,47 @@ narrative:
 
 def call_model(prompt):
     
-    response = client.chat.completions.create(
-        model="deepseek-v4-flash",
+    with make_client('deepseek') as client:
+        response = client.chat.completions.create(
+        model=model_name(),
+        extra_body={"thinking": {"type": "disabled"}},
         messages=[
             {
                 "role": "user",
                 "content": prompt
             }
         ],
+        max_tokens=1200,
         temperature=0.5
     )
 
-    return response.choices[0].message.content
+    content = response.choices[0].message.content
+    if not content or not content.strip():
+        raise ValueError("empty model output")
+    return content
 
 
 
-def generate_with_rag(query, top_k=3):
+def generate_with_rag(query, top_k=2):
     query_meta = analyze_query(query)
 
-    context = retrieve_context(query,top_k)
+    results = search_similar(query, top_k=top_k, query_meta=query_meta)
+    context = format_context(results)
 
     prompt = build_prompt(query,context,query_meta)
 
     output = call_model(prompt)
 
-    return output
+    return {
+    "query": query,
+    "metadata": query_meta,
+    "context": context,
+    "retrieval": [dict(rank=i, item={k:v for k,v in r["item"].items() if k != "embedding"},
+                       semantic_score=r["semantic_score"], metadata_score=r["metadata_score"],
+                       final_score=r["final_score"]) for i,r in enumerate(results,1)],
+    "output": output}
     
     
-query="写一段关于看客心理和群体麻木的场景"
-
-print(generate_with_rag(query))
+if __name__ == "__main__":
+    query="写一段关于看客心理和群体麻木的场景"
+    print(generate_with_rag(query))
