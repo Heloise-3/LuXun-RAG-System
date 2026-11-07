@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>文字改写</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <main>
+    <div class="intro">
+      <h1>文字改写</h1>
+      <p>输入文字或场景，参考鲁迅作品片段生成新的文字。</p>
+    </div>
+    <div class="workspace">
+      <section class="composer" aria-labelledby="input-heading">
+        <h2 id="input-heading">输入</h2>
+        <form id="generate-form">
+          <label for="query">原文或写作主题</label>
+          <textarea id="query" name="query" maxlength="1000" required aria-describedby="input-hint" placeholder="他们开会讨论了半天，却什么决定也没做。"></textarea>
+          <div class="field-note"><span id="input-hint">最多 1,000 字符</span><span id="count">0 / 1,000</span></div>
+          <div class="form-actions">
+            <label for="top-k">参考片段 <select id="top-k"><option value="1">1 段</option><option value="2" selected>2 段</option><option value="3">3 段</option></select></label>
+            <button id="generate-btn" type="submit">生成文字</button>
+          </div>
+        </form>
+        <div class="examples" aria-label="示例主题"><span>示例</span><button type="button" data-example="写一段关于看客心理和群体麻木的场景">围观的人群</button><button type="button" data-example="他们开会讨论了半天，却什么决定也没做。">没有结果的会议</button></div>
+        <p id="status" role="status" aria-live="polite">等待输入。</p>
+        <p id="error" role="alert" hidden></p>
+      </section>
+      <section class="writing" aria-labelledby="output-heading">
+        <h2 id="output-heading">结果</h2>
+        <div id="output"><p class="empty">生成结果将显示在这里。</p><p class="empty-note">可在下方查看本次参考的原文。</p></div>
+        <p class="generation-note">生成文字不是鲁迅原文。</p>
+      </section>
+    </div>
+    <section class="evidence" aria-labelledby="evidence-heading">
+      <div class="section-heading"><h2 id="evidence-heading">参考原文</h2><p>匹配分数不代表生成质量。</p></div>
+      <div id="query-metadata"></div>
+      <div id="retrieval"><p class="empty">生成后显示参考片段及出处。</p></div>
+      <details class="corpus-note"><summary>语料说明</summary><p>当前共14个片段：11个已核对电子原文，3则为保留的原始材料，未作出处核验。1981年纸本页码未核实。</p></details>
+      <details id="context-panel" hidden><summary>完整参考上下文</summary><pre id="context"></pre></details>
+    </section>
+  </main>
+</body>
+</html>

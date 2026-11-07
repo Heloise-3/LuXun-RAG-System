@@ -1,76 +1,410 @@
 [
-{
-"id":1,
-"source":"LuXun",
-"text":"老栓也向那边看，却只见一堆人的后背；颈项都伸得很长，仿佛许多鸭，被无形的手捏住了的，向上提着。静了一会，似乎有点声音，便又动摇起来，轰的一声，都向后退；一直散到老栓立着的地方，几乎将他挤倒了。",
-"tone":[
-"cold",
-"detached",
-"ironic"
-],
-"theme":[
-"crowd",
-"spectatorship",
-"apathy"
-],
-"device":[
-"animal_metaphor",
-"crowd_portrait",
-"action",
-"third_person_observation"
-],
-"narrative":"observer"
-},
-
-
-{
-"id":2,
-"source":"LuXun",
-"text":"孔乙己一到店，所有喝酒的人便都看着他笑，有的叫道，'孔乙己，你脸上又添上新伤疤了！'他不回答……于是这一群孩子都在笑声里走散了。孔乙己是这样的使人快活，可是没有他，别人也便这么过。",
-"tone":[
-"ironic",
-"detached",
-"satirical"
-],
-"theme":[
-"spectatorship",
-"crowd",
-"human_weakness",
-"social_hypocrisy"
-],
-"device":[
-"dialogue",
-"irony",
-"ellipsis",
-"crowd_portrait"
-],
-"narrative":"observer"
-},
-
-
-{
-"id":3,
-"source":"LuXun",
-"text":"这故事倒颇有效，男人听到这里，往往敛起笑容，没趣的走了开去；女人们却不独宽恕了她似的，脸上立刻改换了鄙薄的神气，还要陪出许多眼泪来。有些老女人没有在街头听到她的话，便特意寻来，要听她这一段悲惨的故事。直到她说到呜咽，她们也就一齐流下那停在眼角上的眼泪，叹息一番，满足的去了，一面还纷纷的评论着。……她未必知道她的悲哀经大家咀嚼赏鉴了许多天，早已成为渣滓，只值得烦厌和唾弃。",
-"tone":[
-"cold",
-"detached",
-"ironic",
-"satirical"
-],
-"theme":[
-"spectatorship",
-"crowd",
-"social_hypocrisy",
-"human_weakness"
-],
-"device":[
-"crowd_portrait",
-"irony",
-"action",
-"psychological_description",
-"ellipsis"
-],
-"narrative":"observer"
-}
+  {
+    "id": "LX-001",
+    "source": "鲁迅",
+    "work": "《呐喊》自序",
+    "collection": "呐喊",
+    "text": "凡是愚弱的国民，即使体格如何健全，如何茁壮，也只能做毫无意义的示众的材料和看客，病死多少是不必以为不幸的。所以我们的第一要著，是在改变他们的精神，而善于改变精神的是，我那时以为当然要推文艺，于是想提倡文艺运动了。",
+    "tone": [
+      "critical",
+      "reflective"
+    ],
+    "theme": [
+      "enlightenment",
+      "crowd",
+      "apathy"
+    ],
+    "device": [
+      "contrast",
+      "first_person_narration"
+    ],
+    "narrative": "first_person_memory",
+    "edition": "维基文库所链接固定版本的电子原文（简体显示/字形规范化）；未核1981年纸本",
+    "location": "弃医从文段中，从“凡是愚弱”至“文艺运动了”",
+    "source_url": "https://zh.wikisource.org/w/index.php?title=Page:魯迅全集01_(1948).pdf/292&oldid=2524383",
+    "provenance_status": "verified",
+    "editorial_note": "删除“不不必”重字；恢复“而善于改变精神的是，我那时以为当然要推文艺”及原有语序。 核验范围限所链接电子原文；简繁、卽/即、著/着及引号按说明规范化，不增造句子。",
+    "submission_id": 1,
+    "verification_basis": "linked_digital_text",
+    "verified_at": "2026-11-07",
+    "paper_edition_checked": false,
+    "tags_basis": "使用原dictionary.md词表，人工编辑判断，并非模型测得的人格"
+  },
+  {
+    "id": "LX-003",
+    "source": "鲁迅",
+    "work": "狂人日记",
+    "collection": "呐喊",
+    "text": "我翻开历史一查，这历史没有年代，歪歪斜斜的每叶上都写着『仁义道德』几个字。我横竖睡不着，仔细看了半夜，才从字缝里看出字来，满本都写着两个字是『吃人』！",
+    "tone": [
+      "cold",
+      "critical"
+    ],
+    "theme": [
+      "tradition",
+      "oppression",
+      "enlightenment"
+    ],
+    "device": [
+      "metaphor",
+      "contrast",
+      "first_person_narration"
+    ],
+    "narrative": "first_person_reflective",
+    "edition": "维基文库所链接固定版本的电子原文（简体显示/字形规范化）；未核1981年纸本",
+    "location": "第三节，从“我翻开历史”至“吃人”",
+    "source_url": "https://zh.wikisource.org/w/index.php?title=狂人日記&oldid=2605391",
+    "provenance_status": "verified",
+    "editorial_note": "依据所用文本恢复“每叶”，保留该电子文本引号形式。 核验范围限所链接电子原文；简繁、卽/即、著/着及引号按说明规范化，不增造句子。",
+    "submission_id": 3,
+    "verification_basis": "linked_digital_text",
+    "verified_at": "2026-11-07",
+    "paper_edition_checked": false,
+    "tags_basis": "使用原dictionary.md词表，人工编辑判断，并非模型测得的人格"
+  },
+  {
+    "id": "LX-012a",
+    "source": "鲁迅",
+    "work": "记念刘和珍君",
+    "collection": "华盖集续编",
+    "text": "真的猛士，敢于直面惨淡的人生，敢于正视淋漓的鲜血。这是怎样的哀痛者和幸福者？",
+    "tone": [
+      "tragic",
+      "critical"
+    ],
+    "theme": [
+      "death",
+      "revolution"
+    ],
+    "device": [
+      "parallelism",
+      "contrast"
+    ],
+    "narrative": "first_person_reflective",
+    "edition": "维基文库所链接固定版本的电子原文（简体显示/字形规范化）；未核1981年纸本",
+    "location": "第二节，首两句",
+    "source_url": "https://zh.wikisource.org/w/index.php?title=記念劉和珍君&oldid=2402559",
+    "provenance_status": "verified",
+    "editorial_note": "“真正的勇士”改回“真的猛士”；第二、七节摘录拆开，不作连续段落。 核验范围限所链接电子原文；简繁、卽/即、著/着及引号按说明规范化，不增造句子。",
+    "submission_id": 12,
+    "verification_basis": "linked_digital_text",
+    "verified_at": "2026-11-07",
+    "paper_edition_checked": false,
+    "tags_basis": "使用原dictionary.md词表，人工编辑判断，并非模型测得的人格"
+  },
+  {
+    "id": "LX-012b",
+    "source": "鲁迅",
+    "work": "记念刘和珍君",
+    "collection": "华盖集续编",
+    "text": "苟活者在淡红的血色中，会依稀看见微茫的希望；真的猛士，将更奋然而前行。",
+    "tone": [
+      "tragic",
+      "reflective"
+    ],
+    "theme": [
+      "hope",
+      "revolution",
+      "death"
+    ],
+    "device": [
+      "contrast",
+      "symbolism"
+    ],
+    "narrative": "first_person_reflective",
+    "edition": "维基文库所链接固定版本的电子原文（简体显示/字形规范化）；未核1981年纸本",
+    "location": "第七节，倒数第二段",
+    "source_url": "https://zh.wikisource.org/w/index.php?title=記念劉和珍君&oldid=2402559",
+    "provenance_status": "verified",
+    "editorial_note": "该句保留；与第二节独立入库。 核验范围限所链接电子原文；简繁、卽/即、著/着及引号按说明规范化，不增造句子。",
+    "submission_id": 12,
+    "verification_basis": "linked_digital_text",
+    "verified_at": "2026-11-07",
+    "paper_edition_checked": false,
+    "tags_basis": "使用原dictionary.md词表，人工编辑判断，并非模型测得的人格"
+  },
+  {
+    "id": "LX-014a",
+    "source": "鲁迅",
+    "work": "拿来主义",
+    "collection": "且介亭杂文",
+    "text": "所以我们要运用脑髓，放出眼光，自己来拿！",
+    "tone": [
+      "critical",
+      "restrained"
+    ],
+    "theme": [
+      "enlightenment",
+      "tradition"
+    ],
+    "device": [
+      "metaphor",
+      "parallelism"
+    ],
+    "narrative": "first_person_reflective",
+    "edition": "维基文库所链接固定版本的电子原文（简体显示/字形规范化）；未核1981年纸本",
+    "location": "“譬如罢”段之前的独立段",
+    "source_url": "https://zh.wikisource.org/w/index.php?title=拿来主义&oldid=7903848",
+    "provenance_status": "verified",
+    "editorial_note": "恢复句首“所以”；文集归属更正为《且介亭杂文》。 核验范围限所链接电子原文；简繁、卽/即、著/着及引号按说明规范化，不增造句子。",
+    "submission_id": 14,
+    "verification_basis": "linked_digital_text",
+    "verified_at": "2026-11-07",
+    "paper_edition_checked": false,
+    "tags_basis": "使用原dictionary.md词表，人工编辑判断，并非模型测得的人格"
+  },
+  {
+    "id": "LX-014b",
+    "source": "鲁迅",
+    "work": "拿来主义",
+    "collection": "且介亭杂文",
+    "text": "总之，我们要拿来。我们要或使用，或存放，或毁灭。",
+    "tone": [
+      "critical",
+      "restrained"
+    ],
+    "theme": [
+      "enlightenment",
+      "tradition"
+    ],
+    "device": [
+      "parallelism",
+      "contrast"
+    ],
+    "narrative": "first_person_reflective",
+    "edition": "维基文库所链接固定版本的电子原文（简体显示/字形规范化）；未核1981年纸本",
+    "location": "结尾段，首两句",
+    "source_url": "https://zh.wikisource.org/w/index.php?title=拿来主义&oldid=7903848",
+    "provenance_status": "verified",
+    "editorial_note": "“总结起来说”等改回原文；两处摘录分开保存。 核验范围限所链接电子原文；简繁、卽/即、著/着及引号按说明规范化，不增造句子。",
+    "submission_id": 14,
+    "verification_basis": "linked_digital_text",
+    "verified_at": "2026-11-07",
+    "paper_edition_checked": false,
+    "tags_basis": "使用原dictionary.md词表，人工编辑判断，并非模型测得的人格"
+  },
+  {
+    "id": "LX-015",
+    "source": "鲁迅",
+    "work": "随感录四十一",
+    "collection": "热风",
+    "text": "愿中国青年都摆脱冷气，只是向上走，不必听自暴自弃者流的话。能做事的做事，能发声的发声。有一分热，发一分光，就令萤火一般，也可以在黑暗里发一点光，不必等候炬火。",
+    "tone": [
+      "warm",
+      "reflective"
+    ],
+    "theme": [
+      "hope",
+      "enlightenment"
+    ],
+    "device": [
+      "metaphor",
+      "parallelism"
+    ],
+    "narrative": "first_person_reflective",
+    "edition": "维基文库所链接固定版本的电子原文（简体显示/字形规范化）；未核1981年纸本",
+    "location": "“所以我时常害怕”段中，自“愿”至“炬火”",
+    "source_url": "https://zh.wikisource.org/w/index.php?title=熱風/隨感錄/四十一&oldid=2342362",
+    "provenance_status": "verified",
+    "editorial_note": "“荧火”改回“萤火”；注明从句中“愿”字开始的连续摘录。 核验范围限所链接电子原文；简繁、卽/即、著/着及引号按说明规范化，不增造句子。",
+    "submission_id": 15,
+    "verification_basis": "linked_digital_text",
+    "verified_at": "2026-11-07",
+    "paper_edition_checked": false,
+    "tags_basis": "使用原dictionary.md词表，人工编辑判断，并非模型测得的人格"
+  },
+  {
+    "id": "LX-016",
+    "source": "鲁迅",
+    "work": "狂人日记",
+    "collection": "呐喊",
+    "text": "没有吃过人的孩子，或者还有？\n\n救救孩子……",
+    "tone": [
+      "tragic",
+      "critical"
+    ],
+    "theme": [
+      "childhood",
+      "hope",
+      "oppression"
+    ],
+    "device": [
+      "contrast"
+    ],
+    "narrative": "first_person_reflective",
+    "edition": "维基文库所链接固定版本的电子原文（简体显示/字形规范化）；未核1981年纸本",
+    "location": "第十三节，正文全部，不附写作日期",
+    "source_url": "https://zh.wikisource.org/w/index.php?title=狂人日記&oldid=2605391",
+    "provenance_status": "verified",
+    "editorial_note": "文字保留；恢复两段排版。 核验范围限所链接电子原文；简繁、卽/即、著/着及引号按说明规范化，不增造句子。",
+    "submission_id": 16,
+    "verification_basis": "linked_digital_text",
+    "verified_at": "2026-11-07",
+    "paper_edition_checked": false,
+    "tags_basis": "使用原dictionary.md词表，人工编辑判断，并非模型测得的人格"
+  },
+  {
+    "id": "LX-017",
+    "source": "鲁迅",
+    "work": "无声的中国",
+    "collection": "三闲集",
+    "text": "中国人的性情是总喜欢调和，折中的。譬如你说，这屋子太暗，须在这里开一个窗，大家一定不允许的。但如果你主张拆掉屋顶，他们就会来调和，愿意开窗了。",
+    "tone": [
+      "ironic",
+      "critical"
+    ],
+    "theme": [
+      "tradition",
+      "enlightenment",
+      "human_weakness"
+    ],
+    "device": [
+      "contrast",
+      "satirical_exaggeration"
+    ],
+    "narrative": "omniscient_critical",
+    "edition": "维基文库所链接固定版本的电子原文（简体显示/字形规范化）；未核1981年纸本",
+    "location": "“中国人的性情”段，首三句",
+    "source_url": "https://zh.wikisource.org/w/index.php?title=無聲的中國&oldid=2158004",
+    "provenance_status": "verified",
+    "editorial_note": "删去改写过渡“折中调和的结果”，恢复被省略的拆屋顶原句；更正文集归属。 核验范围限所链接电子原文；简繁、卽/即、著/着及引号按说明规范化，不增造句子。",
+    "submission_id": 17,
+    "verification_basis": "linked_digital_text",
+    "verified_at": "2026-11-07",
+    "paper_edition_checked": false,
+    "tags_basis": "使用原dictionary.md词表，人工编辑判断，并非模型测得的人格"
+  },
+  {
+    "id": "LX-028a",
+    "source": "鲁迅",
+    "work": "死",
+    "collection": "且介亭杂文末编·附集",
+    "text": "损着别人的牙眼，却反对报复，主张宽容的人，万勿和他接近。",
+    "tone": [
+      "cold",
+      "critical"
+    ],
+    "theme": [
+      "social_hypocrisy",
+      "human_weakness"
+    ],
+    "device": [
+      "contrast"
+    ],
+    "narrative": "first_person_reflective",
+    "edition": "维基文库所链接固定版本的电子原文（简体显示/字形规范化）；未核1981年纸本",
+    "location": "所列遗嘱第七条，去掉序号",
+    "source_url": "https://zh.wikisource.org/w/index.php?title=死&oldid=2610692",
+    "provenance_status": "verified",
+    "editorial_note": "“万不可”改回“万勿”；与后段摘录拆开。 核验范围限所链接电子原文；简繁、卽/即、著/着及引号按说明规范化，不增造句子。",
+    "submission_id": 28,
+    "verification_basis": "linked_digital_text",
+    "verified_at": "2026-11-07",
+    "paper_edition_checked": false,
+    "tags_basis": "使用原dictionary.md词表，人工编辑判断，并非模型测得的人格"
+  },
+  {
+    "id": "LX-028b",
+    "source": "鲁迅",
+    "work": "死",
+    "collection": "且介亭杂文末编·附集",
+    "text": "我想了一想，决定的是：让他们怨恨去，我也一个都不宽恕。",
+    "tone": [
+      "cold",
+      "restrained"
+    ],
+    "theme": [
+      "identity"
+    ],
+    "device": [
+      "first_person_narration"
+    ],
+    "narrative": "first_person_reflective",
+    "edition": "维基文库所链接固定版本的电子原文（简体显示/字形规范化）；未核1981年纸本",
+    "location": "七条之后，谈宽恕段的末句",
+    "source_url": "https://zh.wikisource.org/w/index.php?title=死&oldid=2610692",
+    "provenance_status": "verified",
+    "editorial_note": "恢复“让他们怨恨去，我也一个都不宽恕”及前面的第一人称引导句。 核验范围限所链接电子原文；简繁、卽/即、著/着及引号按说明规范化，不增造句子。",
+    "submission_id": 28,
+    "verification_basis": "linked_digital_text",
+    "verified_at": "2026-11-07",
+    "paper_edition_checked": false,
+    "tags_basis": "使用原dictionary.md词表，人工编辑判断，并非模型测得的人格"
+  },
+  {
+    "id": 1,
+    "source": "LuXun",
+    "text": "老栓也向那边看，却只见一堆人的后背；颈项都伸得很长，仿佛许多鸭，被无形的手捏住了的，向上提着。静了一会，似乎有点声音，便又动摇起来，轰的一声，都向后退；一直散到老栓立着的地方，几乎将他挤倒了。",
+    "tone": [
+      "cold",
+      "detached",
+      "ironic"
+    ],
+    "theme": [
+      "crowd",
+      "spectatorship",
+      "apathy"
+    ],
+    "device": [
+      "animal_metaphor",
+      "crowd_portrait",
+      "action",
+      "third_person_observation"
+    ],
+    "narrative": "observer",
+    "provenance_status": "unverified",
+    "editorial_note": "用户于2026-11-07明确要求不再核验，恢复原始文本与标签；不代表已验证出处。"
+  },
+  {
+    "id": 2,
+    "source": "LuXun",
+    "text": "孔乙己一到店，所有喝酒的人便都看着他笑，有的叫道，'孔乙己，你脸上又添上新伤疤了！'他不回答……于是这一群孩子都在笑声里走散了。孔乙己是这样的使人快活，可是没有他，别人也便这么过。",
+    "tone": [
+      "ironic",
+      "detached",
+      "satirical"
+    ],
+    "theme": [
+      "spectatorship",
+      "crowd",
+      "human_weakness",
+      "social_hypocrisy"
+    ],
+    "device": [
+      "dialogue",
+      "irony",
+      "ellipsis",
+      "crowd_portrait"
+    ],
+    "narrative": "observer",
+    "provenance_status": "unverified",
+    "editorial_note": "用户于2026-11-07明确要求不再核验，恢复原始文本与标签；不代表已验证出处。"
+  },
+  {
+    "id": 3,
+    "source": "LuXun",
+    "text": "这故事倒颇有效，男人听到这里，往往敛起笑容，没趣的走了开去；女人们却不独宽恕了她似的，脸上立刻改换了鄙薄的神气，还要陪出许多眼泪来。有些老女人没有在街头听到她的话，便特意寻来，要听她这一段悲惨的故事。直到她说到呜咽，她们也就一齐流下那停在眼角上的眼泪，叹息一番，满足的去了，一面还纷纷的评论着。……她未必知道她的悲哀经大家咀嚼赏鉴了许多天，早已成为渣滓，只值得烦厌和唾弃。",
+    "tone": [
+      "cold",
+      "detached",
+      "ironic",
+      "satirical"
+    ],
+    "theme": [
+      "spectatorship",
+      "crowd",
+      "social_hypocrisy",
+      "human_weakness"
+    ],
+    "device": [
+      "crowd_portrait",
+      "irony",
+      "action",
+      "psychological_description",
+      "ellipsis"
+    ],
+    "narrative": "observer",
+    "provenance_status": "unverified",
+    "editorial_note": "用户于2026-11-07明确要求不再核验，恢复原始文本与标签；不代表已验证出处。"
+  }
 ]

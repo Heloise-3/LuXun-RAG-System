@@ -1,21 +1,14 @@
-from openai import OpenAI
+"""Embedding provider; imported safely without credentials."""
 import os
-from dotenv import load_dotenv
+from config import make_client
 
-load_dotenv()
+def embedding_model():
+    return os.getenv('EMBEDDING_MODEL', 'Qwen/Qwen3-Embedding-8B')
 
-client = OpenAI(
-    api_key=os.getenv("SILICONFLOW_API_KEY"),
-    base_url="https://api.siliconflow.com/v1"
-)
-def embed_text(text:str)->list[float]:
-    response=client.embeddings.create(
-        model="Qwen/Qwen3-Embedding-8B",
-        input=text)
+def embed_text(text: str) -> list[float]:
+    with make_client('siliconflow') as client:
+        response = client.embeddings.create(model=embedding_model(), input=text)
     return response.data[0].embedding
-    
-if __name__ == "__main__":
-    print(len(embed_text("你好")))
 
-
-
+if __name__ == '__main__':
+    print(len(embed_text('你好')))
